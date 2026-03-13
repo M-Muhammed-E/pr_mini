@@ -35,7 +35,7 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 
 }
 ?>
-
+//
 <form method="GET">
 <input type="text" name="zoek" placeholder="Zoek boek...">
 <input type="submit" value="Zoeken">
