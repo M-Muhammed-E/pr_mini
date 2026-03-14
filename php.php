@@ -12,14 +12,8 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
     $query = $conn->prepare("
         SELECT * FROM biebboom
         WHERE 
-        ID LIKE :zoek OR
         Naam LIKE :zoek OR
-        Genre LIKE :zoek OR
-        Auteur LIKE :zoek OR
-        Leesniveau LIKE :zoek OR
-        Beoordeling LIKE :zoek OR
-        `Uitgegeven jaar` LIKE :zoek
-    ");
+        Auteur LIKE :zoek");
 
     $query->execute([
         "zoek" => $zoek
@@ -36,11 +30,6 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 }
 ?>
 
-<form method="GET">
-<input type="text" name="zoek" placeholder="Zoek boek...">
-<input type="submit" value="Zoeken">
-</form>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +41,10 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 </nav>
 <hr>
 </header>
-
+<form method="GET">
+<input type="text" name="zoek" placeholder="Zoek op titel of auteur...">
+<input type="submit" value="Zoeken">
+</form>
 <head>
 <meta charset="UTF-8">
 <title>Boeken</title>
