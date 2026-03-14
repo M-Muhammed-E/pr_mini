@@ -35,7 +35,7 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 
 }
 ?>
-//
+
 <form method="GET">
 <input type="text" name="zoek" placeholder="Zoek boek...">
 <input type="submit" value="Zoeken">
@@ -43,9 +43,20 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 
 <!DOCTYPE html>
 <html lang="en">
+
+<header>
+<h1>Bibliotheek</h1>
+<nav>
+<a href="php.php">Boeken</a> |
+<a href="boektoevoegen.php">Boek toevoegen</a>
+</nav>
+<hr>
+</header>
+
 <head>
 <meta charset="UTF-8">
 <title>Boeken</title>
+
 </head>
 <body>
 
@@ -73,5 +84,9 @@ if(isset($_GET['zoek']) && $_GET['zoek'] != ''){
 <?php } ?>
 
 </table>
+<footer>
+<hr>
+<p>© Bibliotheek 2026</p>
+</footer>
 </body>  
 </html>
