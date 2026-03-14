@@ -30,8 +30,16 @@ Genre:<br>
 Auteur:<br>
 <input type="text" name="Auteur" required><br>
 
-Leesniveau:<br>
-<input type="text" name="Leesniveau" required><br>
+<label>Leesniveau</label><br>
+<select name="Leesniveau" required>
+<option value="">-- Kies leesniveau --</option>
+<option value="A1">A1</option>
+<option value="A2">A2</option>
+<option value="B1">B1</option>
+<option value="B2">B2</option>
+<option value="C1">C1</option>
+<option value="C2">C2</option>
+</select><br>
 
 Beoordeling (1-10):<br>
 <input type="number" name="Beoordeling" min="1" max="10" required><br>
