@@ -1,28 +1,24 @@
 <?php
 
-$dsn = 'mysql:host=localhost;dbname=Biebboom';
-$username = 'root';
-$password = '';
-
-$conn = new PDO($dsn, $username, $password);
+require "db.php";
 
 $naam = trim($_POST['Naam']);
 $genre = trim($_POST['Genre']);
 $auteur = trim($_POST['Auteur']);
-$leesniveau = trim($_POST['Leesniveau']);
+$leesniveau = $_POST['Leesniveau'];
 $beoordeling = $_POST['Beoordeling'];
 $jaar = $_POST['jaar'];
 
 if(empty($naam) || empty($genre) || empty($auteur) || empty($leesniveau)){
-    die("Alle velden moeten ingevuld zijn.");
+die("Alle velden moeten ingevuld zijn");
 }
 
 if(!is_numeric($beoordeling)){
-    die("Beoordeling moet een nummer zijn.");
+die("Beoordeling moet een nummer zijn");
 }
 
 if(!is_numeric($jaar)){
-    die("Jaar moet een nummer zijn.");
+die("Jaar moet een nummer zijn");
 }
 
 $query = $conn->prepare("
@@ -33,14 +29,16 @@ VALUES
 ");
 
 $query->execute([
-"naam" => $naam,
-"genre" => $genre,
-"auteur" => $auteur,
-"leesniveau" => $leesniveau,
-"beoordeling" => $beoordeling,
-"jaar" => $jaar
+
+"naam"=>$naam,
+"genre"=>$genre,
+"auteur"=>$auteur,
+"leesniveau"=>$leesniveau,
+"beoordeling"=>$beoordeling,
+"jaar"=>$jaar
+
 ]);
 
-header("Location: php.php");
+header("Location: index.php");
 
 ?>

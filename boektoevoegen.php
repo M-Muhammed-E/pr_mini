@@ -1,60 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Boek toevoegen</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
 
 <header>
+
 <h1>Bibliotheek</h1>
+
 <nav>
-<a href="php.php">Boeken</a> |
+<a href="index.php">Boeken</a>
 <a href="boektoevoegen.php">Boek toevoegen</a>
 </nav>
-<hr>
+
 </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<main>
 
 <h2>Nieuw boek toevoegen</h2>
 
-<form method="POST" action="insert.php">
+<form method="POST" action="insert.php" id="boekForm">
 
-Naam:<br>
-<input type="text" name="Naam" required><br>
+<label>Naam</label>
+<input type="text" name="Naam" required>
 
-Genre:<br>
-<input type="text" name="Genre" required><br>
+<label>Genre</label>
+<input type="text" name="Genre" required>
 
-Auteur:<br>
-<input type="text" name="Auteur" required><br>
+<label>Auteur</label>
+<input type="text" name="Auteur" required>
 
-<label>Leesniveau</label><br>
+<label>Leesniveau</label>
 <select name="Leesniveau" required>
-<option value="">-- Kies leesniveau --</option>
+
+<option value="">-- Kies niveau --</option>
 <option value="A1">A1</option>
 <option value="A2">A2</option>
 <option value="B1">B1</option>
 <option value="B2">B2</option>
 <option value="C1">C1</option>
 <option value="C2">C2</option>
-</select><br>
 
-Beoordeling (1-10):<br>
-<input type="number" name="Beoordeling" min="1" max="10" required><br>
+</select>
 
-Uitgegeven jaar:<br>
-<input type="number" name="jaar" min="1000" max="2100" required><br><br>
+<label>Beoordeling</label>
+<input type="number" name="Beoordeling" min="1" max="10" required>
+
+<label>Uitgegeven jaar</label>
+<input type="number" name="jaar" min="1000" max="2100" required>
 
 <button type="submit">Boek opslaan</button>
 
 </form>
 
+</main>
 
-</body>
 <footer>
-<hr>
 <p>© Bibliotheek 2026</p>
 </footer>
+
+<script src="script.js"></script>
+
+</body>
 </html>
