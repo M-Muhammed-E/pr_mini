@@ -5,10 +5,10 @@ $username = "root";
 $password = "";
 
 try {
-    $conn = new PDO($dsn, $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$conn = new PDO($dsn, $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
-    echo "Database fout: " . $e->getMessage();
+echo "Database fout: " . $e->getMessage();
 }
 
 ?>

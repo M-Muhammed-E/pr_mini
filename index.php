@@ -11,7 +11,7 @@ WHERE Naam LIKE :zoek OR Auteur LIKE :zoek
 ");
 
 $query->execute([
-"zoek" => $zoek
+"zoek"=>$zoek
 ]);
 
 $data = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -27,17 +27,20 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <title>Bibliotheek</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
 <header>
+
 <h1>Bibliotheek</h1>
 
 <nav>
@@ -50,8 +53,10 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <main>
 
 <form method="GET">
+
 <input type="text" name="zoek" placeholder="Zoek op titel of auteur">
 <button type="submit">Zoeken</button>
+
 </form>
 
 <table>
@@ -69,6 +74,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php foreach ($data as $rows) { ?>
 
 <tr>
+
 <td><?= $rows['ID'] ?></td>
 <td><?= $rows['Naam'] ?></td>
 <td><?= $rows['Genre'] ?></td>
@@ -76,6 +82,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <td><?= $rows['Leesniveau'] ?></td>
 <td><?= $rows['Beoordeling'] ?></td>
 <td><?= $rows['Uitgegeven jaar'] ?></td>
+
 </tr>
 
 <?php } ?>
@@ -87,6 +94,8 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <footer>
 <p>© Bibliotheek 2026</p>
 </footer>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>

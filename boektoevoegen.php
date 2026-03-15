@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <meta charset="UTF-8">
 <title>Boek toevoegen</title>
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -37,6 +39,7 @@
 <input type="text" name="Auteur" required>
 
 <label>Leesniveau</label>
+
 <select name="Leesniveau" required>
 
 <option value="">-- Kies niveau --</option>
@@ -65,7 +68,7 @@
 <p>© Bibliotheek 2026</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
